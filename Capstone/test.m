@@ -10,12 +10,12 @@ Reflectivity = str2double(data{1}(2:2:end));
 Energy = str2double(data{1}(1:2:end));
 
 Eend = 3000;
-step = 1;
-Efirst = 267.24;
-num_harmonics = 5;
+step = 0.1;
+Efirst = 252;
+num_harmonics = 4;
 fwhm = 0.3;
 
-[energies, intensities] = harmonics(Eend, step, Efirst, num_harmonics, fwhm);
+[energies, intensities] = harmonics(Eend, Efirst, num_harmonics, fwhm);
 
 figure(1)
 

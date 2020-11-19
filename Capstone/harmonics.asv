@@ -1,4 +1,4 @@
-function [energies, intensities]=harmonics(Eend, Efirst, num_harmonics, fwhm)
+function [energies, intensities]=harmonics(Eend, step, Efirst, num_harmonics, fwhm)
 %{
 Inputs:
 - Eend is the maximum energy of the energy spectrum
@@ -10,18 +10,6 @@ Outputs:
 - energies is a list of the energies associated to the incoming beam
 - intensities is a list of the intensities of the incoming beam
 %}
-
-% This section of the code determine the step of the energy to be used
-% in the plot based on the precision of the first harmonic
-x = Efirst;
-y = 0;
-while (floor(x)~=x)
-    y = y+1;
-    y
-    x = x*10;
-end
-
-step = 1^(-x); % Energy Step
 
 energies = 30:step:Eend; % initializes the energies of the beam
 
@@ -36,7 +24,7 @@ for i=1:num_harmonics+1
         harmonicenergy = Efirst*(2*n);
     end
     
-    f = (0.5^n)*exp(-(energies-harmonicenergy).^2./(2*fwhm^2));
+    f = (1*0.5^n)*exp(-(energies-harmonicenergy).^2./(2*fwhm^2));
     
     intensities = intensities + f;
     
