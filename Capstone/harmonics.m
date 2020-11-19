@@ -2,6 +2,7 @@ function [energies, intensities]=harmonics(Eend, step, Efirst, num_harmonics, fw
 %{
 Inputs:
 - Eend is the maximum energy of the energy spectrum
+- Hello I made  change
 - step is the energy step to be used
 - Efirst is the energy of the first harmonic used
 - num_harmonics is the number of harmonics to be used
