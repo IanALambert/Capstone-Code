@@ -12,10 +12,11 @@ Energy = str2double(data{1}(1:2:end));
 Eend = 3000;
 step = 0.1;
 Efirst = 252;
-num_harmonics = 4;
+num_harmonics = 5;
+IntFact = [1,0.5,0.5,0.25,0.25];
 fwhm = 0.3;
 
-[energies, intensities] = harmonics(Eend, Efirst, num_harmonics, fwhm);
+[energies, intensities] = harmonics(Eend, Efirst, num_harmonics, fwhm, IntFact);
 
 figure(1)
 
