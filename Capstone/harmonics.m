@@ -1,4 +1,4 @@
-function [energies, intensities]=harmonics(Eend, Efirst, num_harmonics, fwhm, IntFact)
+function [energies, intensities]=harmonics(Eend, Efirst, num_harmonics,even, fwhm, IntFact)
 %{
 Inputs:
 - Eend is the maximum energy of the energy spectrum
@@ -24,7 +24,7 @@ while (floor(x)~=x)
     x = x*10;
 end
 
-step = 1^(-x); % Energy Step
+step = 1^(-(x+2)); % Energy Step
 
 energies = 30:step:Eend; % initializes the energies of the beam
 
@@ -35,8 +35,10 @@ for i=1:num_harmonics
     n = i-1;
     if n == 0
         harmonicenergy = Efirst;
-    elseif n ~= 0
+    elseif n~= 0 && even
         harmonicenergy = Efirst*(2*n);
+    elseif n~=0 && ~even
+        harmonicenergy = Efirst*(2*n-1);
     end
     
     f = IntFact(i).*exp(-(energies-harmonicenergy).^2./(2*fwhm^2));

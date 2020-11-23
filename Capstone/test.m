@@ -11,17 +11,18 @@ Energy = str2double(data{1}(1:2:end));
 
 Eend = 3000;
 step = 0.1;
-Efirst = 252;
+Efirst = 285;
 num_harmonics = 5;
+even= false; 
 IntFact = [1,0.5,0.5,0.25,0.25];
 fwhm = 0.3;
 
-[energies, intensities] = harmonics(Eend, Efirst, num_harmonics, fwhm, IntFact);
+[energies, intensities] = harmonics(Eend, Efirst, num_harmonics, even, fwhm, IntFact);
 
 figure(1)
 
 plot(energies, intensities)
-title('Figure 1: Initial Beam')
+title('Figure 4: Initial Beam for 1st harmonic at 275 eV')
 xlabel('Energy, E (eV)')
 ylabel('Intensities, (normalized)')
 
@@ -32,13 +33,13 @@ I = R.*R.*R.*R.*intensities;
 figure(2)
 
 plot(energies, R)
-title('Figure 2: Reflectivity for SiO_2 at an angle 5 degrees')
+title('Figure 5: Reflectivity for SiO_2 at an angle 2.2 degrees')
 xlabel('X-ray Energy (eV)')
 ylabel('Relectivity')
 
 figure(3)
 plot(energies, I)
-title('Figure 3: Final Beam Intensity')
+title('Figure 6: Final Beam Intensity')
 xlabel('X-ray Energy (eV)')
 ylabel('Intensity')
 
