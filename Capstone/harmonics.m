@@ -35,11 +35,14 @@ for i=1:num_harmonics
     n = i-1;
     if n == 0
         harmonicenergy = Efirst;
+        
     elseif n~= 0 && even
         harmonicenergy = Efirst*(2*n);
     elseif n~=0 && ~even
-        harmonicenergy = Efirst*(2*n-1);
+        
+        harmonicenergy = Efirst*(2*n+1);
     end
+    
     
     f = IntFact(i).*exp(-(energies-harmonicenergy).^2./(2*fwhm^2));
     
