@@ -11,9 +11,9 @@ Energy = str2double(data{1}(1:2:end));
 
 Eend = 3000;
 step = 0.1;
-Efirst = 285;
+Efirst = 275;
 num_harmonics = 5;
-even= false; 
+even= true; 
 IntFact = [1,0.5,0.5,0.25,0.25];
 fwhm = 0.3;
 
@@ -33,7 +33,7 @@ I = R.*R.*R.*R.*intensities;
 figure(2)
 
 plot(energies, R)
-title('Figure 5: Reflectivity for SiO_2 at an angle 2.2 degrees')
+title('Figure 5: Reflectivity for SiO_2 at an angle 2.5 degrees')
 xlabel('X-ray Energy (eV)')
 ylabel('Relectivity')
 

@@ -44,7 +44,7 @@ for i=1:num_harmonics
     end
     
     
-    f = IntFact(i).*exp(-(energies-harmonicenergy).^2./(2*fwhm^2));
+    f = IntFact(i).*exp(-4*log(2)*(energies-harmonicenergy).^2./(fwhm^2));
     
     intensities = intensities + f;
     
