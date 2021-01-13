@@ -22,7 +22,7 @@ fwhm = 0.3;
 figure(1)
 
 plot(energies, intensities)
-title('Figure 4: Initial Beam for 1st harmonic at 275 eV')
+title('Figure 2: Initial Beam for Desired harmonic at 275 eV')
 xlabel('Energy, E (eV)')
 ylabel('Intensities, (normalized)')
 
@@ -33,13 +33,13 @@ I = R.*R.*R.*R.*intensities;
 figure(2)
 
 plot(energies, R)
-title('Figure 5: Reflectivity for SiO_2 at an angle 2.5 degrees')
+title('Figure 3: Reflectivity for SiO_2 at an angle 2.5 degrees')
 xlabel('X-ray Energy (eV)')
 ylabel('Relectivity')
 
 figure(3)
 plot(energies, I)
-title('Figure 6: Final Beam Intensity')
+title('Figure 4: Final Beam Intensity')
 xlabel('X-ray Energy (eV)')
 ylabel('Intensity')
 
