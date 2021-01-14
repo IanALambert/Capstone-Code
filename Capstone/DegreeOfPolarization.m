@@ -1,7 +1,7 @@
-function [theta_1,theta_2, P] = DegreeOfPolarization(n1,n2,numR)
+function [theta_1,theta_2, Is,Ip] = DegreeOfPolarization(n1,n2,numR)
 
 % Determining the incident and relected angles
-theta_1 = 0:0.0001:pi/2;
+theta_1 = 0:0.00001:pi/2;
 theta_2 = asin((n1/n2).*sin(theta_1));
 
 % Determine the reflection coefficients
@@ -14,5 +14,4 @@ Is = (rs.^numR).^2;
 
 % Calculate the degree of polarization
 
-P = abs(Ip-Is)./(Ip+Is);
 end
